@@ -24,7 +24,12 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
         message="hello World "
         encrypted_message=caesar.encrypt(message,13)
-        self.response.write(encrypted_message)
+
+        textarea="<textarea>"+encrypted_message+"</textarea>"
+        submit="<input type='submit'>"
+        form="<form >"+textarea+"<br>"+submit+"</form>"
+        content=form
+        self.response.write(content)
 
 
 
