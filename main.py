@@ -16,10 +16,16 @@
 #
 import webapp2
 
+
+
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Hello world!')
+        message=" "
+		encrypted_message=encrypt(message,13)
+        self.response.write(encrypted_message)
+		
+
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+	('/', MainHandler)
 ], debug=True)
